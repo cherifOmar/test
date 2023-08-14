@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>S'inscrire</h1>
+<div mat-dialog-content>
+  <form [formGroup]="signupForm" (ngSubmit)="signup()" >
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <input formControlName="email" type="email" matInput placeholder="*****@****.***" >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Mot de passe</mat-label>
+      <input formControlName="password" type="password" matInput placeholder="Mot de passe" >
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="outline">
+      <mat-label>Confirmer mot de passe</mat-label>
+      <input formControlName="confirmPassword" matInput type="password" placeholder="confirmer mot de passe" [(ngModel)]="confirmPassword">
+    </mat-form-field> -->
+
+    <h4>Role</h4>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="roles">
+          <mat-option *ngFor="let rr of role" [value]="rr">{{ rr.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <!-- <mat-form-field appearance="outline">
+      <mat-label>Téléphone</mat-label>
+      <input formControlName="phone" matInput type="tel" maxlength="8" placeholder="Téléphone" [(ngModel)]="phone">
+    </mat-form-field> -->
+
+    <u><p class="p" (click)="openLogin()">Se connecter</p></u>
+
+    <div mat-dialog-action [align]="'center'">
+    <button style="margin-left: 8px;" mat-raised-button color="success" >S'inscrire</button>
+    </div>
+
+  </form>
+</div>
+

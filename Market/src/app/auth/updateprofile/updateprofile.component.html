@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>Modifier profil</h1>
+<div mat-dialog-content>
+  <form [formGroup]="signupForm" >
+    <mat-form-field appearance="outline">
+      <mat-label>username</mat-label>
+      <input formControlName="username" matInput placeholder="username" [(ngModel)]="username">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <input formControlName="mail" type="email" matInput placeholder="*****@****.***" [(ngModel)]="mail">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Mot de passe</mat-label>
+      <input formControlName="password" type="password" matInput placeholder="Mot de passe" [(ngModel)]="password">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Confirmer mot de passe</mat-label>
+      <input formControlName="confirmPassword" matInput type="password" placeholder="confirmer mot de passe" [(ngModel)]="confirmPassword">
+    </mat-form-field>
+
+    <label for=""><h1>Choisissez votre categorie</h1></label>
+    <mat-radio-group formControlName="status" class="example-radio-group" [(ngModel)]="status">
+      <mat-radio-button class="example-radio-button" *ngFor="let statuss of signupList" [value]="statuss">
+        {{statuss}}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Téléphone</mat-label>
+      <input formControlName="phone" matInput type="tel" maxlength="8" placeholder="Téléphone" [(ngModel)]="phone">
+    </mat-form-field>
+
+
+    <div mat-dialog-action [align]="'center'">
+    <button style="margin-left: 8px;" mat-raised-button color="success" >Modifier</button>
+    </div>
+
+  </form>
+</div>
+

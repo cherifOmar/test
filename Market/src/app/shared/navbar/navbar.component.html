@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="openProfile()"  >
+    <mat-icon>supervised_user_circle</mat-icon>
+  </button>
+  <span>Market</span>
+
+  <span class="example-spacer"></span>
+
+
+
+<div class="example-button-row">
+
+  <button mat-raised-button color="warn" routerLink="/orders" >Orders</button>
+  <button mat-raised-button color="warn" routerLink="/stock" >Stock</button>
+  <button mat-raised-button color="warn" (click)="openDialog()" >Add product</button>
+</div>
+</mat-toolbar>
+<div>
+  <app-table-product [vendorId]="vendorId"></app-table-product>
+</div>
